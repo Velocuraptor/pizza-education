@@ -1,3 +1,4 @@
+using System;
 using Model;
 using Oculus.Interaction;
 using UnityEngine;
@@ -6,43 +7,63 @@ namespace View
 {
     public class IngredientGrabObject : MonoBehaviour
     {
-        [SerializeField] private Transform model;
+        [SerializeField] private Transform modelContainer;
         [SerializeField] private PointableUnityEventWrapper grabbableUnityEventWrapper;
         
         private Vector3 _modelStartPosition;
         private Vector3 _startPosition;
         private Quaternion _startRotation;
-        private IngredientData _ingredient;
+        private int _ingredient;
+        private Pizza _pizza;
     
         public void Initialize(int ingredientIndex)
         {
-            _ingredient = PizzaData.Instance.IngredientDataList.GetIngredientBy(ingredientIndex);
+            _ingredient = ingredientIndex;
             InitModel();
         }
 
         private void InitModel()
         {
-            if (model.childCount > 0) Destroy(model.GetChild(0));
-            Instantiate(_ingredient.Model, model);
+            var model = PizzaData.Instance.IngredientDataList.GetIngredientBy(_ingredient).Model;
+            if (modelContainer.childCount > 0) Destroy(modelContainer.GetChild(0));
+            Instantiate(model, modelContainer);
         }
 
         private void Start()
         {
             _startPosition = transform.position;
             _startRotation = transform.rotation;
-            _modelStartPosition = model.localPosition;
+            _modelStartPosition = modelContainer.localPosition;
             grabbableUnityEventWrapper.WhenSelect.AddListener(OnGrabbed);
             grabbableUnityEventWrapper.WhenRelease.AddListener(OnReleased);
         }
 
+        private void OnCollisionEnter(Collision other)
+        {
+            if (!other.rigidbody.TryGetComponent<Pizza>(out var pizza)) return;
+            _pizza = pizza;
+        }
+
+        private void OnCollisionExit(Collision other)
+        {
+            if (!other.rigidbody.TryGetComponent<Pizza>(out var pizza)) return;
+            if (_pizza == pizza) _pizza = null;
+        }
+
         private void OnGrabbed(PointerEvent pointerEvent)
         {
-            model.position = pointerEvent.Pose.position;
+            modelContainer.position = pointerEvent.Pose.position;
         }
         
         private void OnReleased(PointerEvent pointerEvent)
         {
-            model.localPosition = _modelStartPosition;
+            if (_pizza)
+            {
+                _pizza.AddIngredient(_ingredient, modelContainer.position);
+                _pizza = null;
+            }
+            
+            modelContainer.localPosition = _modelStartPosition;
             transform.position = _startPosition;
             transform.rotation = _startRotation;
         }

@@ -1,5 +1,6 @@
 using System.Linq;
 using Model;
+using UnityEditor;
 using UnityEngine;
 
 namespace HelpScripts
@@ -13,6 +14,9 @@ namespace HelpScripts
         {
             var positions = transform.OfType<Transform>().Select(c => c.localPosition).ToArray();
             placementData.Positions = positions;
+            EditorUtility.SetDirty(placementData);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
     }
 }

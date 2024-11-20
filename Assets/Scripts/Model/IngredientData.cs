@@ -7,7 +7,7 @@ namespace Model
     public struct IngredientData
     {
         public string Name;
-        public GameObject Model;
+        public Ingredient Model;
         public bool IsSouse;
     }
 }

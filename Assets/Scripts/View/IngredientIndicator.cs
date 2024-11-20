@@ -13,8 +13,7 @@ namespace View
         {
             var modelPrefab = PizzaData.Instance.IngredientDataList.GetIngredientBy(ingredient).Model;
             var model = Instantiate(modelPrefab, transform);
-            var renderer = model.GetComponent<Renderer>();
-            var material = renderer.material;
+            var material = model.Material;
             material.SetInt(SrcBlend, (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
             material.SetInt(DstBlend, (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
             material.SetInt(ZWrite, 0);
@@ -22,9 +21,9 @@ namespace View
             material.EnableKeyword("_ALPHABLEND_ON");
             material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
             material.renderQueue = 3000;
-            var color = renderer.sharedMaterial.color;
+            var color = model.Material.color;
             color.a = 0.5f;
-            renderer.sharedMaterial.color = color;
+            model.Material.color = color;
         }
     }
 }

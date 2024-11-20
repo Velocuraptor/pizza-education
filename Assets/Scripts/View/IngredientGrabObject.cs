@@ -24,8 +24,8 @@ namespace View
 
         private void InitModel()
         {
-            var model = PizzaData.Instance.IngredientDataList.GetIngredientBy(_ingredient).Model;
             if (modelContainer.childCount > 0) Destroy(modelContainer.GetChild(0));
+            var model = PizzaData.Instance.IngredientDataList.GetIngredientBy(_ingredient).Model;
             Instantiate(model, modelContainer);
         }
 
@@ -38,15 +38,15 @@ namespace View
             grabbableUnityEventWrapper.WhenRelease.AddListener(OnReleased);
         }
 
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
-            if (!other.rigidbody.TryGetComponent<Pizza>(out var pizza)) return;
+            if (other.attachedRigidbody == null || !other.attachedRigidbody.TryGetComponent<Pizza>(out var pizza)) return;
             _pizza = pizza;
         }
 
-        private void OnCollisionExit(Collision other)
+        private void OnTriggerExit(Collider other)
         {
-            if (!other.rigidbody.TryGetComponent<Pizza>(out var pizza)) return;
+            if (other.attachedRigidbody == null || !other.attachedRigidbody.TryGetComponent<Pizza>(out var pizza)) return;
             if (_pizza == pizza) _pizza = null;
         }
 

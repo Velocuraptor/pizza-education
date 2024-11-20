@@ -607,74 +607,6 @@ Transform:
   - {fileID: 540466407}
   m_Father: {fileID: 1588381209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &406755548
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 286564676973262730, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_Name
-      value: Pizza
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.06719288
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.994
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.6373477
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605095541862640442, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
---- !u!114 &406755549 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4470188379962254250, guid: faec69272d6c3d84b9975ff7086efa7d, type: 3}
-  m_PrefabInstance: {fileID: 406755548}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35ecbdec21794b4489e8cf5d309123db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &426195904
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,6 +767,7 @@ Transform:
   m_Children:
   - {fileID: 1226673611}
   - {fileID: 1544963391}
+  - {fileID: 1709811188}
   - {fileID: 1750856370}
   - {fileID: 845819849}
   - {fileID: 1884996205}
@@ -974,7 +907,7 @@ GameObject:
   - component: {fileID: 845819849}
   - component: {fileID: 845819850}
   m_Layer: 0
-  m_Name: PizzaMaker
+  m_Name: PizzaSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1128,6 +1061,38 @@ Transform:
   - {fileID: 1241050293}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1119717623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6840471593328882662, guid: 3bc77cb8e3537ca47947090b95b94285, type: 3}
+  m_PrefabInstance: {fileID: 7654380567781187372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1119717627
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119717623}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1125611040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1271,7 +1236,7 @@ GameObject:
   m_Layer: 0
   m_Name: PizzaContainer
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1284,7 +1249,7 @@ Transform:
   m_GameObject: {fileID: 1241050292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.194, y: 0.994, z: -1.694}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1484,6 +1449,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d61dd8e9249d6b76f4b107c488589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipeController: {fileID: 1709811189}
+  indicatorController: {fileID: 1884996206}
+  bowlSpawner: {fileID: 1750856371}
+  pizzaSpawner: {fileID: 845819850}
+  testRecipe: {fileID: 11400000, guid: 9bc2027705996b845b17111e06e53669, type: 2}
 --- !u!1001 &1554519138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1844,6 +1814,50 @@ Transform:
   - {fileID: 397649812}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1709811187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1709811188}
+  - component: {fileID: 1709811189}
+  m_Layer: 0
+  m_Name: RecipeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1709811188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709811187}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 548625955}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1709811189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709811187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d8e0d3f751a8e46a0d1e1655e0b467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1750856369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,7 +1949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientIndicator: {fileID: 8526549339114018821, guid: a5f83803c53a1bc499eaae99b58dbb52, type: 3}
-  testPizza: {fileID: 406755549}
+  testPizza: {fileID: 0}
 --- !u!1001 &1891955318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2442,7 +2456,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6840471593328882662, guid: 3bc77cb8e3537ca47947090b95b94285, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1119717627}
   m_SourcePrefab: {fileID: 100100000, guid: 3bc77cb8e3537ca47947090b95b94285, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -2455,4 +2472,3 @@ SceneRoots:
   - {fileID: 548625955}
   - {fileID: 1019927008}
   - {fileID: 1245301220}
-  - {fileID: 406755548}

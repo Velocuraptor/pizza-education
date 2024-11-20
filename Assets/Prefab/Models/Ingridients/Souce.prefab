@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8367633733548485537}
   - component: {fileID: 1965685905292711010}
   - component: {fileID: 474849240563471630}
+  - component: {fileID: 746869766378452728}
   m_Layer: 0
   m_Name: Souce
   m_TagString: Untagged
@@ -83,3 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &746869766378452728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222250076744109317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943ef25e1512474087ba2458a7387927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 474849240563471630}
+  rawColor: {r: 0.8862745, g: 0.4392157, b: 0.4392157, a: 1}
+  doneColor: {r: 0.85882354, g: 0.21568628, b: 0.21568628, a: 1}
+  burnColor: {r: 0, g: 0, b: 0, a: 1}

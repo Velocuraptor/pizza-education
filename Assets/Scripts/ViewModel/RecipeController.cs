@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Model;
 using UnityEngine;
 
 public class RecipeController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static RecipeController _instance;
+    private Recipe _currentRecipe;
+    
+    public static RecipeController Instance => _instance;
+    public Recipe CurrentRecipe => _currentRecipe;
+
+    private void Awake()
     {
-        
+        _instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetRecipe(Recipe recipe)
     {
-        
+        _currentRecipe = recipe;
     }
 }

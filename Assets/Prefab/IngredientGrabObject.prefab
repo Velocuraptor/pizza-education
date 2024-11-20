@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad159904f824874a1b6a2b3b86af48e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 1530635051587134054}
+  modelContainer: {fileID: 1530635051587134054}
   grabbableUnityEventWrapper: {fileID: 6105739214215832769}
 --- !u!1 &9084292417604928698
 GameObject:

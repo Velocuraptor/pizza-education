@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286564676973262730}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06719288, y: 0.994, z: -1.6373477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -88,7 +88,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1443108062187552761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,8 +197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ecbdec21794b4489e8cf5d309123db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 5662384879919660831}
+  crust: {fileID: 8144477857187667640}
   souseLayer: {fileID: 7192474737545979020}
   toppingLayer: {fileID: 425670807881015085}
+  grabbableUnityEventWrapper: {fileID: 1397357398967264210}
 --- !u!1 &1782791322888401486
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576838626004509186}
-  - component: {fileID: 7353200138213270812}
+  - component: {fileID: 6369177601836294349}
   m_Layer: 0
   m_Name: HandGrabInteractable
   m_TagString: Untagged
@@ -231,7 +234,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3605095541862640442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7353200138213270812
+--- !u!114 &6369177601836294349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,7 +243,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782791322888401486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baed3e011583e1844a6e85b1cd0657f2, type: 3}
+  m_Script: {fileID: 11500000, guid: e9a7676b01585ce43908639a27765dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interactorFilters: []
@@ -251,8 +254,10 @@ MonoBehaviour:
   _rigidbody: {fileID: 5662384879919660831}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
+  _scoringModifier:
+    _positionRotationWeight: 0.8
   _slippiness: 0
-  _supportedGrabTypes: 1
+  _supportedGrabTypes: 2
   _pinchGrabRules:
     _thumbRequirement: 1
     _indexRequirement: 1
@@ -424,3 +429,14 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4428754836550342530, guid: be7226b3a3db4184da678513803a3915, type: 3}
+--- !u!114 &8144477857187667640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1461889892128146616, guid: 3ba3bd8997e67654ca8410a392a324e5, type: 3}
+  m_PrefabInstance: {fileID: 1923227903869527536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639500084337577897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943ef25e1512474087ba2458a7387927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

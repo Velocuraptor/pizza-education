@@ -7,7 +7,7 @@ namespace View
     public class Bowl : MonoBehaviour
     {
         [SerializeField] private Transform ingredientsContainer;
-        [SerializeField] private IngredientGrabObject ingredientGrabObject;
+        [SerializeField] private IngredientGrabObject[] ingredientGrabObjects;
         [SerializeField] private Shader maskedShader;
         
         private IngredientData _ingredient;
@@ -15,7 +15,8 @@ namespace View
         public void Initialize(int ingredientIndex)
         {
             _ingredient = PizzaData.Instance.IngredientDataList.GetIngredientBy(ingredientIndex);
-            ingredientGrabObject.Initialize(ingredientIndex);
+            foreach (var ingredientGrab in ingredientGrabObjects) 
+                ingredientGrab.Initialize(ingredientIndex);
             Fill();
         }
         
@@ -25,7 +26,7 @@ namespace View
             if (_ingredient.IsSouse)
             {
                 var ingredient = Instantiate(model, ingredientsContainer);
-                ingredient.GetComponent<Renderer>().sharedMaterial.shader = maskedShader;
+                ingredient.Material.shader = maskedShader;
                 ingredient.transform.localScale *= 2;
             }
             else
@@ -38,7 +39,7 @@ namespace View
                 for (var i = 0; i < countIngredients; i++)
                 {
                     var ingredient = Instantiate(model, ingredientsContainer);
-                    ingredient.GetComponent<Renderer>().sharedMaterial.shader = maskedShader;
+                    ingredient.Material.shader = maskedShader;
                     ingredient.transform.localPosition = new Vector3(
                         Random.Range(-spawnRadius, spawnRadius),
                         0,

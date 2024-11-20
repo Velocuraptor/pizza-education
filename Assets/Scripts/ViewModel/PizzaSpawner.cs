@@ -4,17 +4,15 @@ using View;
 
 namespace ViewModel
 {
-    public class PizzaMaker : MonoBehaviour
+    public class PizzaSpawner : MonoBehaviour
     {
         [SerializeField] private Transform pizzaContainer;
         [SerializeField] private Pizza pizzaPrefab;
-
-        private Recipe _currentRecipe;
+        
         private Pizza _pizzaInstance;
 
-        public void CreatePizza(Recipe recipe)
+        public void CreatePizza()
         {
-            _currentRecipe = recipe;
             _pizzaInstance = Instantiate(pizzaPrefab, pizzaContainer);
         }
     }

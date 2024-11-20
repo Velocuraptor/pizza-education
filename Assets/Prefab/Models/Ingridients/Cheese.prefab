@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5366922567347497161}
   - component: {fileID: 2050410187351682295}
   - component: {fileID: 4577105215005496296}
+  - component: {fileID: -1077313572934034228}
   m_Layer: 0
   m_Name: Cheese
   m_TagString: Untagged
@@ -83,3 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-1077313572934034228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552304778566205076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943ef25e1512474087ba2458a7387927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 4577105215005496296}
+  rawColor: {r: 1, g: 0.9411765, b: 0.74509805, a: 1}
+  doneColor: {r: 1, g: 0.84313726, b: 0.31764707, a: 1}
+  burnColor: {r: 0, g: 0, b: 0, a: 1}

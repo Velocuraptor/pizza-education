@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6442329027727309674}
   - component: {fileID: 9099314224451464132}
   - component: {fileID: 6275461413171896203}
+  - component: {fileID: -7318709169888094130}
   m_Layer: 0
   m_Name: Sausage
   m_TagString: Untagged
@@ -83,3 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-7318709169888094130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197701457239099750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943ef25e1512474087ba2458a7387927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 6275461413171896203}
+  rawColor: {r: 0.8627451, g: 0.6666667, b: 0.57254905, a: 1}
+  doneColor: {r: 0.9254902, g: 0.44313726, b: 0.21176471, a: 1}
+  burnColor: {r: 0, g: 0, b: 0, a: 1}

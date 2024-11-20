@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2205255310933651239}
   - component: {fileID: 4161097875660467778}
   - component: {fileID: 8768172575792415173}
+  - component: {fileID: -7917225175521665543}
   m_Layer: 0
   m_Name: Pepper
   m_TagString: Untagged
@@ -83,3 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-7917225175521665543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4305069774078888639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943ef25e1512474087ba2458a7387927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 8768172575792415173}
+  rawColor: {r: 0.3372549, g: 0.91764706, b: 0, a: 1}
+  doneColor: {r: 0.7372549, g: 0.91764706, b: 0, a: 1}
+  burnColor: {r: 0, g: 0, b: 0, a: 1}

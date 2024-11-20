@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PepperinePizza
   m_EditorClassIdentifier: 
   Name: Pepperoni Pizza
+  Temperature: 220
+  Time: 60
   Ingredients: 0600000000000000

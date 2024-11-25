@@ -45,16 +45,18 @@ namespace ViewModel
 
         private void IngredientAdded(int ingredient)
         {
-            var ingredientCount = _ingredientsCount[ingredient];
-            ingredientCount.Item1 += 1;
-            ingredientsView.UpdateIngredientView(ingredient, ingredientCount.Item1);
-            if (_currentIndicator != ingredient || _currentIndicator == _ingredientsCount.Count) return;
-            if (ingredientCount.Item1 < ingredientCount.Item2) return;
+            var (current, max) = _ingredientsCount[ingredient];
+            current += 1;
+            _ingredientsCount[ingredient] = (current, max);
+            ingredientsView.UpdateIngredientView(ingredient, current);
+            if (_currentIndicator == CurrentRecipe.Ingredients.Length ||
+                ingredient != CurrentRecipe.Ingredients[_currentIndicator]) return;
+            if (current < max) return;
             _currentIndicator += 1;
             indicatorController.ClearIndicators();
-            if (_currentIndicator == _ingredientsCount.Count) return;
+            if (_currentIndicator == CurrentRecipe.Ingredients.Length) return;
             var index = CurrentRecipe.Ingredients[_currentIndicator];
-            indicatorController.SetIndicator(CurrentRecipe.Ingredients[index], pizzaSpawner.PizzaInstance);
+            indicatorController.SetIndicator(index, pizzaSpawner.PizzaInstance);
         }
 
         private void InitCounter()

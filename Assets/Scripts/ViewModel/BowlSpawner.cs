@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using View;
 
@@ -18,7 +19,8 @@ namespace ViewModel
 
         public void ClearBowls()
         {
-            foreach (var ingredient in _bowlInstances.Keys) RemoveBowl(ingredient);
+            var ingredients = _bowlInstances.Keys.ToList();
+            for (var i = 0; i < ingredients.Count; i++) RemoveBowl(ingredients[i]);
         }
         
         private void AddBowl(int ingredientIndex)
@@ -33,7 +35,7 @@ namespace ViewModel
         private void RemoveBowl(int ingredientIndex)
         {
             if (!_bowlInstances.TryGetValue(ingredientIndex, out var bowl)) return;
-            Destroy(bowl);
+            Destroy(bowl.gameObject);
             _bowlInstances.Remove(ingredientIndex);
         }
 

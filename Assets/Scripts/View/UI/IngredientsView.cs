@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Model;
 using UnityEngine;
 
@@ -21,8 +22,9 @@ namespace View.UI
 
         public void Clear()
         {
-            for (var i = 0; i < _ingredientObjectInstances.Count; i++)
-                Destroy(_ingredientObjectInstances[i].gameObject);
+            var ingredientObjects = _ingredientObjectInstances.Values.ToList();
+            for (var i = 0; i < ingredientObjects.Count; i++)
+                Destroy(ingredientObjects[i].gameObject);
             _ingredientObjectInstances.Clear();
         }
 

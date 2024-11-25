@@ -37,11 +37,9 @@ namespace View.UI
             congratulationsText.text = $"Congratulations you have cooked {recipeName}";
         
         public void UpdateResultText(float resultValue) =>
-            resultText.text = $"Result\n{resultValue}%";
+            resultText.text = $"Result\n{resultValue:N0}%";
         
-        public void UpdateTimeText(float cookingTime)
-        {
-            resultText.text = $"Time\n{(int)cookingTime / 60}:{cookingTime % 60}";
-        }
+        public void UpdateTimeText(float cookingTime) => 
+            timeText.text = $"Time\n{(cookingTime / 60):00}:{(cookingTime % 60):00}";
     }
 }

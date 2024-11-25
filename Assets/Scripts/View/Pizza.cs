@@ -20,6 +20,7 @@ namespace View
 
         public Transform SouseLayer => souseLayer;
         public Transform ToppingLayer => toppingLayer;
+        public float Result => 50.0f - Mathf.Abs(_bakingValue - 100.0f);
 
         public event Action<int> IngredientAdded;
         public event Action<int> IngredientRemoved;

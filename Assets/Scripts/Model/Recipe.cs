@@ -6,6 +6,7 @@ namespace Model
     public class Recipe : ScriptableObject
     {
         public string Name;
+        public Sprite Sprite;
         public float Temperature;
         public float Time;
         public int[] Ingredients;

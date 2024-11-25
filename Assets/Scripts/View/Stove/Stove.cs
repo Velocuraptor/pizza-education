@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Oculus.Interaction;
 using UnityEngine;
+using ViewModel;
 
 namespace View.Stove
 {
@@ -47,8 +48,8 @@ namespace View.Stove
             other.attachedRigidbody.UnlockKinematic();
             _pizza = null;
         }
-        
-        public void AttachPizza()
+
+        private void AttachPizza()
         {
             _pizza.transform.position = pizzaAnchor.position;
             _pizza.transform.rotation = Quaternion.identity;
@@ -87,6 +88,7 @@ namespace View.Stove
 
         private void TryStartBaking()
         {
+            if (_baking != null) return;
             if (_pizza == null) return;
             if (_isDoorOpen || _temperature == 0 || _time == 0) return;
             _baking = StartCoroutine(Baking());
@@ -107,7 +109,7 @@ namespace View.Stove
                 DecreaseTime(1.0f);
                 var recipeTemperature = RecipeController.Instance.CurrentRecipe.Temperature;
                 var recipeTime = RecipeController.Instance.CurrentRecipe.Time;
-                var increment = 1.0f / recipeTime * (_temperature / recipeTemperature);
+                var increment = 100.0f / recipeTime * (_temperature / recipeTemperature);
                 _pizza.Bake(increment);
             }
 

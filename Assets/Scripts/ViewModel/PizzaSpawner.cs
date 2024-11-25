@@ -11,9 +11,14 @@ namespace ViewModel
         
         private Pizza _pizzaInstance;
 
-        public void CreatePizza()
+        public Pizza PizzaInstance => _pizzaInstance;
+
+        public void CreatePizza() => _pizzaInstance = Instantiate(pizzaPrefab, pizzaContainer);
+
+        public void Restart()
         {
-            _pizzaInstance = Instantiate(pizzaPrefab, pizzaContainer);
+            Destroy(_pizzaInstance.gameObject);
+            _pizzaInstance = null;
         }
     }
 }

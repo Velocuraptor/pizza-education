@@ -11,13 +11,17 @@ namespace ViewModel
 
         private readonly Dictionary<int, Bowl> _bowlInstances = new();
 
-        [ContextMenu("Test")]
-        public void Test()
+        public void AddBowls(IEnumerable<int> ingredients)
         {
-            AddBowl(6);
+            foreach (var ingredient in ingredients) AddBowl(ingredient);
+        }
+
+        public void ClearBowls()
+        {
+            foreach (var ingredient in _bowlInstances.Keys) RemoveBowl(ingredient);
         }
         
-        public void AddBowl(int ingredientIndex)
+        private void AddBowl(int ingredientIndex)
         {
             if (_bowlInstances.ContainsKey(ingredientIndex)) return;
             var bowl = Instantiate(bowlPrefab, bowlContainer);
@@ -26,7 +30,7 @@ namespace ViewModel
             _bowlInstances.Add(ingredientIndex, bowl);
         }
         
-        public void RemoveBowl(int ingredientIndex)
+        private void RemoveBowl(int ingredientIndex)
         {
             if (!_bowlInstances.TryGetValue(ingredientIndex, out var bowl)) return;
             Destroy(bowl);

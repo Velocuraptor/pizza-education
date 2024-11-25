@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Model;
 using UnityEngine;
@@ -8,19 +9,11 @@ namespace ViewModel
     public class IngredientIndicatorController : MonoBehaviour
     {
         [SerializeField] private IngredientIndicator ingredientIndicator;
-        [SerializeField] private Pizza testPizza;
         
         private readonly List<GameObject> _indicatorInstances = new();
 
-        [ContextMenu("Test")]
-        public void Test()
-        {
-            SetIndicator(6, testPizza);
-        }
-        
         public void SetIndicator(int ingredient, Pizza pizza)
         {
-            ClearIndicators();
             var isSouse = PizzaData.Instance.IsSouse(ingredient);
             if (isSouse)
             {
@@ -41,7 +34,7 @@ namespace ViewModel
             }
         }
 
-        private void ClearIndicators()
+        public void ClearIndicators()
         {
             for (var i = 0; i < _indicatorInstances.Count; i++) Destroy(_indicatorInstances[i]);
             _indicatorInstances.Clear();

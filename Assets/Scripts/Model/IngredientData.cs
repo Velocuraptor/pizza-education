@@ -9,5 +9,6 @@ namespace Model
         public string Name;
         public Ingredient Model;
         public bool IsSouse;
+        public Sprite Thumbnail;
     }
 }

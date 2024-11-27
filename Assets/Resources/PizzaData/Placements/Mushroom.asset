@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5aeabd1f1046938c55229e8738c7ca, type: 3}
+  m_Name: Mushroom
+  m_EditorClassIdentifier: 
+  Ingredient: 1
+  Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0.0549, y: 0, z: 0.0769}
+  - {x: 0.1085, y: 0, z: 0.1538}
+  - {x: 0.1679, y: 0, z: 0.0601}
+  - {x: 0.1078, y: 0, z: -0.0194}
+  - {x: 0.1582, y: 0, z: -0.1066}
+  - {x: 0.038, y: 0, z: -0.1034}
+  - {x: 0.0703, y: 0, z: -0.1919}
+  - {x: -0.0421, y: 0, z: -0.1745}
+  - {x: -0.0692, y: 0, z: -0.0841}
+  - {x: -0.1551, y: 0, z: -0.1222}
+  - {x: -0.1551, y: 0, z: -0.0156}
+  - {x: -0.0821, y: 0, z: 0.0432}
+  - {x: -0.0408, y: 0, z: 0.1298}
+  - {x: 0.0167, y: 0, z: 0.1899}
+  - {x: -0.1202, y: 0, z: 0.1602}
+  - {x: -0.1641, y: 0, z: 0.0872}

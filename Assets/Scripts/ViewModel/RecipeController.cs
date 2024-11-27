@@ -8,6 +8,7 @@ namespace ViewModel
 {
     public class RecipeController : MonoBehaviour
     {
+        [SerializeField] private BakingDisplay bakingDisplay;
         [SerializeField] private RecipesView recipesView;
         [SerializeField] private IngredientsView ingredientsView;
         [SerializeField] private BowlSpawner bowlSpawner;
@@ -34,6 +35,8 @@ namespace ViewModel
         private void SetRecipe(Recipe recipe)
         {
             _currentRecipe = recipe;
+            bakingDisplay.ShowInformation(true);
+            bakingDisplay.UpdateInformation(recipe.Temperature, recipe.Time);
             pizzaSpawner.CreatePizza();
             pizzaSpawner.PizzaInstance.IngredientAdded += IngredientAdded;
             bowlSpawner.ClearBowls();
@@ -93,6 +96,7 @@ namespace ViewModel
             bowlSpawner.ClearBowls();
             pizzaSpawner.Restart();
             indicatorController.ClearIndicators();
+            bakingDisplay.ShowInformation(false);
         }
     }
 }

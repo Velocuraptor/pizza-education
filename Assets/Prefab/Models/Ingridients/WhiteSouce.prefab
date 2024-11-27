@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 474849240563471630}
   - component: {fileID: 746869766378452728}
   m_Layer: 0
-  m_Name: Souce
+  m_Name: WhiteSouce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 187e700de91c9034daea07daef00b199, type: 2}
+  - {fileID: 2100000, guid: 069cc4708342a5e4b83fecc31c4284a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,6 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 474849240563471630}
-  rawColor: {r: 0.8862745, g: 0.4392157, b: 0.4392157, a: 1}
-  doneColor: {r: 0.85882354, g: 0.21568628, b: 0.21568628, a: 1}
+  rawColor: {r: 1, g: 0.99607843, b: 0.9019608, a: 1}
+  doneColor: {r: 0.93333334, g: 0.9254902, b: 0.70980394, a: 1}
   burnColor: {r: 0, g: 0, b: 0, a: 1}
